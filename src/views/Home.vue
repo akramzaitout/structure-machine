@@ -1,41 +1,65 @@
 <template>
-<div>
-  <v-row
-          align="center"
-          justify="center"
-        >
-    <v-col 
-      v-for="(item , index) in items" 
-      :key="index"
-      cols="12"
-      sm="12"
-      md="6" 
-      class="text-center"
-    >
-      <item-component :item="item" ></item-component>
-    </v-col>
+  <v-container class="py-10">
+    <v-row class="mb-6">
+      <v-col cols="12" class="text-center">
+        <h1 class="display-2 font-weight-black text-uppercase mb-2">
+          Dashboard
+        </h1>
+        <p class="subtitle-1 grey--text">Select a tool to start your logic analysis</p>
+      </v-col>
+    </v-row>
 
-  </v-row>
-</div>
+    <v-row align="stretch" justify="center">
+      <v-col 
+        v-for="(item, index) in items" 
+        :key="index"
+        cols="12"
+        sm="6"
+        md="4"
+        class="d-flex" 
+      >
+        <ItemComponent :item="item" class="flex-grow-1" />
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
+
 <script>
-
-import itemComponent from '../components/testComponent.vue'
-
-var socket = null;
+import ItemComponent from '../components/ItemComponent.vue'
 
 export default {
   name: 'Home',
-  data : () => ({
-    items : [
-      {title:"Number Conventer" , function : "convert numbers from any Base to Any base and calcule his value with 3 Methods." , routerLink : "/numberConverter" , src : "base"},
-      {title:"Truth Table" , function : "Generate Truth Table of any function from its expressions." , routerLink : "/truthTable" , src:"truthtable"},
-      //{title:"Drow Function" , function : "Draw the electrical circuit of any function from its expressions."  , routerLink : "/functionLogigramme" , src:"drowfunction"},
-      {title:"Sumplify Function" , function : "Simplifying the expression of any logical function to the simplest possible." , routerLink : "/functionsimplification" , src:"sfuncition"}
-    ]
-  }),
-  components : {
-    itemComponent
+  components: { ItemComponent },
+  data() {
+    return {
+      items: [
+        {
+          title: "Number Converter",
+          function: "Convert numbers between bases and calculate values using SVA, Ca1, or Ca2.",
+          routerLink: "/numberConverter",
+          src: "base"
+        },
+        {
+          title: "Truth Table",
+          function: "Generate complete truth tables from any logical expression.",
+          routerLink: "/truthTable",
+          src: "truthtable"
+        },
+        {
+          title: "Simplify Function",
+          function: "Simplify logical functions to their most minimal Boolean expression.",
+          routerLink: "/functionsimplification",
+          src: "sfuncition"
+        }
+      ]
+    }
   }
 }
 </script>
+
+<style scoped>
+/* Ensures the container doesn't hug the screen edges on ultra-wide monitors */
+.v-container {
+  max-width: 1200px;
+}
+</style>
