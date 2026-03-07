@@ -230,8 +230,8 @@
 </template>
 
 <script>
-import TruthTable from "@/utils/truthTable";
-import Simplification from "@/utils/simplificationFunction";
+import TruthTable from "../utils/truthTable";
+import Simplification from "../utils/simplificationFunction";
 let tableGenerate = new TruthTable();
 
 export default {

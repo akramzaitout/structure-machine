@@ -140,7 +140,7 @@
 </template>
 
 <script>
-import Base from "@/utils/base";
+import Base from "../utils/base";
 
 export default {
   name: 'NumberConverter',

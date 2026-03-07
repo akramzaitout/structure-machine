@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '@/views/home.vue'
-import About from '@/views/about.vue'
-import NumberConverter from '@/views/numberConverter.vue'
-import TruthTable from '@/views/truthTable.vue'
-import FunctionLogigramme from '@/views/functionLogigramme.vue'
-import FunctionSimplification from '@/views/functionSimplification.vue'
+import Home from '../views/home.vue'
+import About from '../views/about.vue'
+import NumberConverter from '../views/numberConverter.vue'
+import TruthTable from '../views/truthTable.vue'
+import FunctionLogigramme from '../views/functionLogigramme.vue'
+import FunctionSimplification from '../views/functionSimplification.vue'
 
 Vue.use(VueRouter)
 
